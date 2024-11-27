@@ -33,7 +33,7 @@ inoremap (<SPACE> ()<ESC>i
 
 function! SubstituteParentheses(parentheses)
     let char_under_cursor = getline('.')[col('.')-1:]
-    let match_str = matchstr(char_under_cursor, '\s*'.a:parentheses)
+    let match_str = matchstr(char_under_cursor, '.\{-}'.a:parentheses)
     let match_len = strlen(match_str)
     echo(char_under_cursor . '|' . match_str . '|' . match_len)
     if match_str == ''
@@ -52,7 +52,12 @@ function! Abbreviation(word)
 endfunction
 
 inoremap <expr> ) SubstituteParentheses(')')
+inoremap )) )
 inoremap <expr> } SubstituteParentheses('}')
+inoremap }} }
 inoremap <expr> ] SubstituteParentheses(']')
+inoremap ]] ]
+
+inoremap jj <ESC>
 
 inoremap <expr> de<SPACE> Abbreviation('de')
