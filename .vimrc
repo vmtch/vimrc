@@ -58,6 +58,6 @@ inoremap }} }
 inoremap <expr> ] SubstituteParentheses(']')
 inoremap ]] ]
 
-inoremap jj <ESC>
+inoremap <silent> jj <ESC>
 
 inoremap <expr> de<SPACE> Abbreviation('de')
