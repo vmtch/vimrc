@@ -6,23 +6,22 @@ set smartindent
 set number
 set cursorline
 
-echo('loaded')
-
 let loaded = 'yes'
 
 if has('nvim')
     let b:copilot_enabled = 1
     set clipboard=unnamedplus
 else
-    colorscheme solarized
+    packadd! dracula
+    syntax enable
+    colorscheme dracula
 endif
 if exists('g:vscode')
     "Copilot disable
 endif
-syntax on
-let g:solarized_termcolors=256
 
 hi Keyword cterm=none ctermfg=69
+
 
 inoremap {<CR> {<CR>}<ESC><S-o>
 inoremap (<CR> (<CR>)<ESC><S-o>
@@ -43,14 +42,6 @@ function! SubstituteParentheses(parentheses)
     endif
 endfunction
 
-function! Abbreviation(word)
-    echo('test')
-    if a:word == "de"
-        echo('abbre!')
-        return "def :\<CR>\<ESC>kwi"
-    endif
-endfunction
-
 inoremap <expr> ) SubstituteParentheses(')')
 inoremap )) )
 inoremap <expr> } SubstituteParentheses('}')
@@ -59,5 +50,3 @@ inoremap <expr> ] SubstituteParentheses(']')
 inoremap ]] ]
 
 inoremap <silent> jj <ESC>
-
-inoremap <expr> de<SPACE> Abbreviation('de')
