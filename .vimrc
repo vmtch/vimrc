@@ -68,6 +68,32 @@ nnoremap <silent> <Leader>j :<C-u>NERDTreeToggle<CR>
 
 inoremap <silent> jj <ESC>
 
+" terminal settings
+function! ToggleTerminal()
+  " Hide the terminal if there already exists a terminal
+  for w in range(1, winnr('$'))
+    if getbufvar(winbufnr(w), '&buftype') ==# 'terminal'
+      execute w . 'wincmd w'
+      execute 'hide'
+      return
+    endif
+  endfor
+  " Show the termianl if already exists
+  for buf in range(1, bufnr('$'))
+    if getbufvar(buf, '&buftype') ==# 'terminal'
+    execute 'botright split'
+    execute w . 'wincmd w'
+    execute 'buffer' buf
+    return
+  endif
+  endfor
+  " Execute new terminal if not exists
+  execute 'terminal'
+endfunction
+
+nnoremap <c-g> :call ToggleTerminal()<CR>
+tnoremap <c-g> <C-\><C-n>:call ToggleTerminal()<CR>
+
 " settings for lightline
 let g:lightline = {
     \'colorscheme': 'dracula'
