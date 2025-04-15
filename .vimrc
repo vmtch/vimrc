@@ -30,6 +30,7 @@ call dein#add('Shougo/dein.vim')
 call dein#add('preservim/nerdtree')
 call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-repeat')
 
 call dein#end()
 
