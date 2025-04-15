@@ -86,6 +86,7 @@ function! ToggleTerminal()
     if getbufvar(buf, '&buftype') ==# 'terminal'
     execute 'botright split'
     execute 'buffer' buf
+    normal! i
     return
   endif
   endfor
