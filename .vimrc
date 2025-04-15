@@ -25,6 +25,7 @@ endif
 
 call dein#begin(s:dein_dir)
 
+call dein#add('dracula/vim', {'name': 'dracula'})
 call dein#add('Shougo/dein.vim')
 call dein#add('preservim/nerdtree')
 call dein#add('itchyny/lightline.vim')
@@ -50,7 +51,6 @@ if has('nvim')
     let b:copilot_enabled = 1
     set clipboard=unnamedplus
 else
-    packadd! dracula
     syntax enable
     colorscheme dracula
 endif
