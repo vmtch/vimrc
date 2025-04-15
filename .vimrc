@@ -5,6 +5,7 @@ set tabstop=4
 set smartindent
 set relativenumber
 set cursorline
+set incsearch
 set nobackup
 set noswapfile
 
