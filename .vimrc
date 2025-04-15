@@ -31,6 +31,7 @@ call dein#add('preservim/nerdtree')
 call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
+call dein#add('nathanaelkane/vim-indent-guides')
 
 call dein#end()
 
@@ -68,3 +69,6 @@ inoremap <silent> jj <ESC>
 let g:lightline = {
     \'colorscheme': 'dracula'
 \}
+
+" settings for indentguides
+let g:indent_guides_enable_on_vim_startup=1
