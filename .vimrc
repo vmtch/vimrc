@@ -77,6 +77,7 @@ function! ToggleTerminal()
     if getbufvar(winbufnr(w), '&buftype') ==# 'terminal'
       execute w . 'wincmd w'
       execute 'hide'
+      execute 'wincmd p'
       return
     endif
   endfor
@@ -84,13 +85,20 @@ function! ToggleTerminal()
   for buf in range(1, bufnr('$'))
     if getbufvar(buf, '&buftype') ==# 'terminal'
     execute 'botright split'
-    execute w . 'wincmd w'
     execute 'buffer' buf
     return
   endif
   endfor
   " Execute new terminal if not exists
   execute 'terminal'
+  execute 'hide'
+  for buf in range(1, bufnr('$'))
+    if getbufvar(buf, '&buftype') ==# 'terminal'
+    execute 'botright split'
+    execute 'buffer' buf
+    return
+  endif
+  endfor
 endfunction
 
 nnoremap <c-g> :call ToggleTerminal()<CR>
