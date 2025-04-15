@@ -63,6 +63,9 @@ endif
 
 hi Keyword cterm=none ctermfg=69
 
+let mapleader = "\<Space>"
+nnoremap <silent> <Leader>j :<C-u>NERDTreeToggle<CR>
+
 inoremap <silent> jj <ESC>
 
 " settings for lightline
