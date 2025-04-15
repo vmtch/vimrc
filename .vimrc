@@ -44,6 +44,7 @@ set cursorline
 set incsearch
 set nobackup
 set noswapfile
+set laststatus=2
 
 let loaded = 'yes'
 
@@ -61,3 +62,8 @@ endif
 hi Keyword cterm=none ctermfg=69
 
 inoremap <silent> jj <ESC>
+
+" settings for lightline
+let g:lightline = {
+    \'colorscheme': 'dracula'
+\}
