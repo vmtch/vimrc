@@ -32,6 +32,7 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('tpope/vim-surround')
 call dein#add('tpope/vim-repeat')
 call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('github/copilot.vim')
 
 call dein#end()
 
