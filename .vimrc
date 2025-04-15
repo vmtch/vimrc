@@ -1,3 +1,18 @@
+" settings for dein.vim
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+if &runtimepath !~# '/dein.vim'
+    set runtimepath+=s:dein_repo_dir
+endif
+
+call dein#begin(s:dein_dir)
+
+call dein#add('Shougo/dein.vim')
+
+call dein#end()
+
+" fundamental settings
 set noerrorbells
 set expandtab
 set shiftwidth=4
