@@ -5,6 +5,8 @@ set tabstop=4
 set smartindent
 set relativenumber
 set cursorline
+set nobackup
+set noswapfile
 
 let loaded = 'yes'
 
