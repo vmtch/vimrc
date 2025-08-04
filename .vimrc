@@ -26,6 +26,7 @@ endif
 call dein#begin(s:dein_dir)
 
 call dein#add('dracula/vim', {'name': 'dracula'})
+" call dein#add('catppuccin/vim', {'name': 'catppuccin'})
 call dein#add('Shougo/dein.vim')
 call dein#add('preservim/nerdtree')
 call dein#add('itchyny/lightline.vim')
@@ -48,6 +49,8 @@ set incsearch
 set nobackup
 set noswapfile
 set laststatus=2
+set termguicolors
+set mouse=a
 
 let loaded = 'yes'
 
@@ -57,6 +60,7 @@ if has('nvim')
 else
     syntax enable
     colorscheme dracula
+"    colorscheme catppuccin_latte
 endif
 if exists('g:vscode')
     "Copilot disable
@@ -106,9 +110,7 @@ nnoremap <c-g> :call ToggleTerminal()<CR>
 tnoremap <c-g> <C-\><C-n>:call ToggleTerminal()<CR>
 
 " settings for lightline
-let g:lightline = {
-    \'colorscheme': 'dracula'
-\}
+let g:lightline = {'colorscheme': 'catppuccin_latte'}
 
 " settings for indentguides
 let g:indent_guides_enable_on_vim_startup=1
